@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+    animation: shakeBody linear 8s infinite;
+
+}
+
+
+.sky{
+    background-image: url('./images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+.trees{
+    background-image: url('./images/trees.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    top: -128px;
+    position: absolute;
+}
+
+.track{
+    background-image: url('./images/track.png');
+    background-repeat: repeat-x;
+    /* background-size: cover; */
+    height: 50vh;
+    width: 800vw;
+    position: absolute;
+    top: 70vh;
+    animation: carMove linear 6s infinite;
+
+}
+.car{
+    background-image: url('./images/car_body.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100px;
+    width: 380px;
+    position: absolute;
+    left: 220px;
+    bottom: 29vh;
+    animation: Shake linear 3s infinite;
+
+}
+
+.wheel1 img{
+    position: relative;  /* so that it moves relative to the car */ 
+    width: 55px;
+    top: 49px;
+    left: 53px;
+    animation: wheelRotation linear 0.6s infinite;
+}
+.wheel2 img{
+    position: relative;  /* so that it moves relative to the car */ 
+    width: 52px;
+    top: -10px;
+    left: 246px;
+    animation: wheelRotation linear 0.6s infinite;
+
+}
+
+@keyframes wheelRotation
+{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+
+    }
+    /* 100%{
+        transform: rotate(360deg);
+    } */
+}
+
+@keyframes carMove
+{
+    100%{
+        transform: translateX(-500vw);
+    }
+}
+
+@keyframes Shake
+{
+    0%{
+        transform: translateY(-5px);
+    }
+
+    50%{
+        transform: translateY(5px);
+    }
+
+    100%{
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes shakeBody
+{
+    0%{
+        transform: translateY(-50px);
+    }
+
+    50%{
+        transform: translateY(50px);
+    }
+
+    100%{
+        transform: translateY(-50px);
+    }
+}
